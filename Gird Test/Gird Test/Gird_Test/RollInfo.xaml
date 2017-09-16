@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gird_Test.RollInfo"
+             Title="Roll A Ball Ralph"
+             >
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="BlanchedAlmond">
+            <Label 
+                Text="Parking page for info about Roll A Ball" 
+                TextColor="Black"
+                />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

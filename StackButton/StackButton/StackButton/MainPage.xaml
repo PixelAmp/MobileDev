@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:StackButton"
+             x:Class="StackButton.MainPage"
+             BackGroundColor="BlanchedAlmond"
+             >
+
+    <Stacklayout
+        Orientation ="Vertical"
+        
+        <Label 
+            x:Name ="QuestionLabel"
+            Text="Do you like Mudkips?!" 
+            TextColor = "Blue" 
+            BackgroundColor ="Black"
+            
+            />
+        <Button
+            x:name="YesButton"
+            Text="Yes, I am not a heathen"
+            TextColor="Green"
+            Clicked="YesClick"
+            />
+        <Button
+            x:name="NoButton"
+            Text="No. I am literally the devil"
+            TextColor="Red"
+            Clicked="NoClick"
+            />
+        
+    </Stacklayout>
+
+
+</ContentPage>
