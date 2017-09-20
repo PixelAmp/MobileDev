@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2E6A998E-268C-4619-9405-17A45AEFFBAA}</ProjectGuid>
+    <ProjectGuid>{443CE2D7-BFD4-4767-A0EE-FDC41FF780B1}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PUBGApp.Droid</RootNamespace>
-    <AssemblyName>PUBGApp.Android</AssemblyName>
+    <RootNamespace>Whos_That_Pokemon_Quiz_App.Droid</RootNamespace>
+    <AssemblyName>Whos_That_Pokemon_Quiz_App.Android</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidApplication>true</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
@@ -105,6 +105,9 @@
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
@@ -112,19 +115,7 @@
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\PUBGBanner.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\ChickenDinner.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\PUBGStats.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\icon.png" />
-  </ItemGroup>
-  <Import Project="..\PUBGApp\PUBGApp.projitems" Label="Shared" Condition="Exists('..\PUBGApp\PUBGApp.projitems')" />
+  <Import Project="..\Whos_That_Pokemon_Quiz_App\Whos_That_Pokemon_Quiz_App.projitems" Label="Shared" Condition="Exists('..\Whos_That_Pokemon_Quiz_App\Whos_That_Pokemon_Quiz_App.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
