@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Whos_That_Pokemon.ResultsPage"
+             Title="Results!">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor ="BlanchedAlmond">
+            
+            <Label 
+                x:Name="goodJobText"
+                Text="Great job! You're well on your way to becoming a Pokemon Master!!" 
+                TextColor="Black"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                HorizontalTextAlignment="Center"
+                FontSize ="35"
+                />
+
+            <Label
+                x:Name="stats"
+                Text="Of the five questions, you answered this many correctly:"
+                TextColor="Black"
+                FontSize="Medium"
+                HorizontalTextAlignment="Center"
+                />
+            
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

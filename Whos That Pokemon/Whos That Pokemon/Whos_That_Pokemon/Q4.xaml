@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Whos_That_Pokemon.Q4"
+             Title="Question #4">
+    <ContentPage.Content>
+        <StackLayout Spacing="10" BackgroundColor="LightCyan">
+
+
+            <Image 
+                Source="CubSilo.jpg" 
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                />
+
+            <Grid BackgroundColor = "BlanchedAlmond">
+
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+
+                </Grid.RowDefinitions>
+
+
+
+
+                <Button
+                    Text="Kangaskhan!"
+                    TextColor="Black"
+                    Clicked="Ans1"
+                    BackgroundColor="DarkTurquoise"
+                    Margin ="0,0,0,0"
+                    
+                    Grid.Row="0"
+                    />
+
+                <Button
+                    Text="Hitmonchan!"
+                    TextColor="Black"
+                    Clicked="Ans2"
+                    BackgroundColor="DarkTurquoise"
+                    Margin ="0,0,0,0"
+                    
+                    Grid.Row="1"
+                />
+
+                <Button
+                    Text="Cubone!"
+                    TextColor="Black"
+                    Clicked="Ans3"
+                    BackgroundColor="DarkTurquoise"
+                    Margin ="0,0,0,0"
+                    
+                    Grid.Row="2"
+                />
+
+                <Button
+                    Text="Skulltran!"
+                    TextColor="Black"
+                    Clicked="Ans4"
+                    BackgroundColor="DarkTurquoise"
+                    Margin ="0,0,0,0"
+                    
+                    Grid.Row="3"
+                />
+
+
+
+
+            </Grid>
+
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
