@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Whos_That_Pokemon"
+             x:Class="Whos_That_Pokemon.MainPage"
+             Title="Start Page"
+             >
+
+    
+
+
+        <Grid BackgroundColor ="BlanchedAlmond">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+
+
+            <Label 
+                Text="Who's that" 
+                x:Name="QuestionText"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                HorizontalTextAlignment="Center"
+                FontSize ="50"
+                TextColor="Black"
+                Grid.Row="0"
+                Grid.Column="0" 
+                />
+
+            <Image
+                Source="pokebanner.png" 
+                HorizontalOptions="FillAndExpand"
+                Grid.Row="1"
+                Grid.Column="0" 
+                />
+
+            <Image 
+                Source="Question.png"
+                Grid.Row="2"
+                   
+                />
+
+
+            <Button
+                Text="Start playing!"
+                TextColor="Black"
+                Clicked="StartClick"
+                BackgroundColor="DarkTurquoise"
+                HeightRequest="80"
+                Grid.Row="3"
+                Grid.Column="0"
+            />
+
+
+
+
+        </Grid>
+    
+
+</ContentPage>
