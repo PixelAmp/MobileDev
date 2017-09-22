@@ -23,7 +23,14 @@
                 FontSize="Medium"
                 HorizontalTextAlignment="Center"
                 />
-            
+
+            <Label
+                x:Name="dataOutput"
+                TextColor="Black"
+                FontSize="100"
+                HorizontalTextAlignment="Center"                
+                
+                />
 
 
         </StackLayout>

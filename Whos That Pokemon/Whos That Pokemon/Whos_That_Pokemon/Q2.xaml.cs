@@ -12,33 +12,36 @@ namespace Whos_That_Pokemon
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Q2 : ContentPage
 	{
-		public Q2 ()
+        int newCount;
+		public Q2 (int oldCount)
 		{
 			InitializeComponent ();
+            newCount = oldCount;
 		}
 
         private void Ans1(object sender, EventArgs e)
         {
             var button = (Button)sender;
-            Navigation.PushAsync(new Q3());
+            Navigation.PushAsync(new Q3(newCount));
         }
 
         private void Ans2(object sender, EventArgs e)
         {
             var button = (Button)sender;
-            Navigation.PushAsync(new Q3());
+            Navigation.PushAsync(new Q3(++newCount));
         }
 
         private void Ans3(object sender, EventArgs e)
         {
             var button = (Button)sender;
-            Navigation.PushAsync(new Q3());
+            
+            Navigation.PushAsync(new Q3(newCount));
         }
 
         private void Ans4(object sender, EventArgs e)
         {
             var button = (Button)sender;
-            Navigation.PushAsync(new Q3());
+            Navigation.PushAsync(new Q3(newCount));
         }
     }
 }

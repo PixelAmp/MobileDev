@@ -12,9 +12,11 @@ namespace Whos_That_Pokemon
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ResultsPage : ContentPage
 	{
-		public ResultsPage ()
+		public ResultsPage (int correctCount)
 		{
 			InitializeComponent ();
+            dataOutput.Text = (correctCount).ToString();
 		}
+
 	}
 }

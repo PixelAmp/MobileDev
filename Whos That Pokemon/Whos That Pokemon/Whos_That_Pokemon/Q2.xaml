@@ -35,7 +35,7 @@
                     />
 
                 <Button
-                    Text="Ekans!"
+                    Text="Dratini!"
                     TextColor="Black"
                     Clicked="Ans2"
                     BackgroundColor="DarkTurquoise"
@@ -45,7 +45,7 @@
                 />
 
                 <Button
-                    Text="Dratini!"
+                    Text="Ekans!"
                     TextColor="Black"
                     Clicked="Ans3"
                     BackgroundColor="DarkTurquoise"

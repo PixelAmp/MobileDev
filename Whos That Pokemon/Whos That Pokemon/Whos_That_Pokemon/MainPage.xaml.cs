@@ -9,6 +9,7 @@ namespace Whos_That_Pokemon
 {
 	public partial class MainPage : ContentPage
 	{
+
 		public MainPage()
 		{
 			InitializeComponent();
