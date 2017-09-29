@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{27BC1F7F-DAD0-4E37-80D4-5647A682ED22}</ProjectGuid>
+    <ProjectGuid>{2EB772B1-D80E-4126-A504-BA1896646E94}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Week4_Test.Droid</RootNamespace>
-    <AssemblyName>Week4_Test.Android</AssemblyName>
+    <RootNamespace>Streamys_Winners_List.Droid</RootNamespace>
+    <AssemblyName>Streamys_Winners_List.Android</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidApplication>true</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
@@ -115,13 +115,7 @@
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\EscapePlanetIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\RollABallRaplhIcon.png" />
-  </ItemGroup>
-  <Import Project="..\Week4_Test\Week4_Test.projitems" Label="Shared" Condition="Exists('..\Week4_Test\Week4_Test.projitems')" />
+  <Import Project="..\Streamys_Winners_List\Streamys_Winners_List.projitems" Label="Shared" Condition="Exists('..\Streamys_Winners_List\Streamys_Winners_List.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
