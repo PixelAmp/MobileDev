@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("Streamys_Winners_List.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("StreamysListApp.Droid.Resource", IsApplication=true)]
 
-namespace Streamys_Winners_List.Droid
+namespace StreamysListApp.Droid
 {
 	
 	
@@ -26,7 +26,7 @@ namespace Streamys_Winners_List.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Streamys_Winners_List.Droid.Resource.Attribute.actionBarSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::StreamysListApp.Droid.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation

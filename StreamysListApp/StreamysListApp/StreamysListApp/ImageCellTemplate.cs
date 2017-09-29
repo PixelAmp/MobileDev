@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms; //needs to be added to use ImageSource for Icon
 
-namespace Streamys_Winners_List
+namespace StreamysListApp
 {
     class ImageCellTemplate
     {
@@ -24,11 +24,12 @@ namespace Streamys_Winners_List
             get;
             set;
         }
-
+        
         public string URL
         {
             get;
             set;
         }
+        
     }
 }

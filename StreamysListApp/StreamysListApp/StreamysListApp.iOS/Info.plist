@@ -23,9 +23,9 @@
     <key>MinimumOSVersion</key>
     <string>8.0</string>
     <key>CFBundleDisplayName</key>
-    <string>Streamys_Winners_List</string>
+    <string>StreamysListApp</string>
     <key>CFBundleIdentifier</key>
-    <string>com.yourcompany.Streamys_Winners_List</string>
+    <string>com.yourcompany.StreamysListApp</string>
     <key>CFBundleVersion</key>
     <string>1.0</string>
     <key>CFBundleIconFiles</key>

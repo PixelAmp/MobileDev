@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace Streamys_Winners_List.iOS
+namespace StreamysListApp.iOS
 {
 	public class Application
 	{

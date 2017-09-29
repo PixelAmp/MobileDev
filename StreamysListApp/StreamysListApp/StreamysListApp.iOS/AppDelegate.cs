@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace Streamys_Winners_List.iOS
+namespace StreamysListApp.iOS
 {
 	// The UIApplicationDelegate for the application. This class is responsible for launching the 
 	// User Interface of the application, as well as listening (and optionally responding) to 
@@ -23,7 +23,7 @@ namespace Streamys_Winners_List.iOS
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
 			global::Xamarin.Forms.Forms.Init ();
-			LoadApplication (new Streamys_Winners_List.App ());
+			LoadApplication (new StreamysListApp.App ());
 
 			return base.FinishedLaunching (app, options);
 		}

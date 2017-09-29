@@ -5,7 +5,7 @@ using System.Text;
 
 using Xamarin.Forms;
 
-namespace Streamys_Winners_List
+namespace StreamysListApp
 {
 	public partial class App : Application
 	{
@@ -13,7 +13,7 @@ namespace Streamys_Winners_List
 		{
 			InitializeComponent();
 
-			MainPage = new Streamys_Winners_List.MainPage();
+			MainPage = new StreamysListApp.MainPage();
 		}
 
 		protected override void OnStart ()

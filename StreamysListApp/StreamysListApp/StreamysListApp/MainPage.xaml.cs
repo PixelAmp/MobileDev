@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using System.Collections.ObjectModel;
+using System.Collections.ObjectModel; //needed for obsevable object
 
-namespace Streamys_Winners_List
+namespace StreamysListApp
 {
-	public partial class MainPage : ContentPage
-	{
-		public MainPage()
-		{
-			InitializeComponent();
+    public partial class MainPage : ContentPage
+    {
+        public MainPage()
+        {
+            InitializeComponent();
             PopulateListView();//calls function
         }
 
@@ -23,7 +23,7 @@ namespace Streamys_Winners_List
             {
                 new ImageCellTemplate() //1
                 {
-                    IconSource = ImageSource.FromFile("SP7Icon.png"),
+                    IconSource = ImageSource.FromFile("SP7Icon.jpg"),
                     ImageText = "SugarPine 7",
                     DetailText = "Show of the year",
                     URL = "https://www.youtube.com/channel/UCEY0yxj6QxG4RBVRSe5orig",
@@ -31,7 +31,7 @@ namespace Streamys_Winners_List
 
                 new ImageCellTemplate() //2
                 {
-                    IconSource = ImageSource.FromFile("DLIcon.png"),
+                    IconSource = ImageSource.FromFile("DTIcon.jpg"),
                     ImageText = "Dolan Twins",
                     DetailText = "Creator of the year",
                     URL = "https://www.youtube.com/user/TheDolanTwins",
@@ -39,7 +39,7 @@ namespace Streamys_Winners_List
 
                 new ImageCellTemplate() //3
                 {
-                    IconSource = ImageSource.FromFile("RLIcon.png"),
+                    IconSource = ImageSource.FromFile("RLIcon.jpg"),
                     ImageText = "Rhett & Link’s Buddy System",
                     DetailText = "Comedy Series",
                     URL = "https://www.youtube.com/playlist?list=PLJ49NV73ttruI9rFSL0xrqHzZjJmdH219",
@@ -47,7 +47,7 @@ namespace Streamys_Winners_List
 
                 new ImageCellTemplate() //4
                 {
-                    IconSource = ImageSource.FromFile("Icon.png"),
+                    IconSource = ImageSource.FromFile("VFIcon.jpg"),
                     ImageText = "Worth It*",
                     DetailText = "Food *(Should have been Binging with Babish)",
                     URL = "https://www.youtube.com/playlist?list=PL5vtqDuUM1DmXwYYAQcyUwtcalp_SesZD",
@@ -55,7 +55,7 @@ namespace Streamys_Winners_List
 
                 new ImageCellTemplate() //5
                 {
-                    IconSource = ImageSource.FromFile("YTIcon.png"),
+                    IconSource = ImageSource.FromFile("TYIcon.jpg"),
                     ImageText = "The Young Turks*",
                     DetailText = "News and Culture *(Should have Been The Philip DeFranco Show)",
                     URL = "https://www.youtube.com/user/TheYoungTurks",
@@ -63,7 +63,7 @@ namespace Streamys_Winners_List
 
                 new ImageCellTemplate() //6
                 {
-                    IconSource = ImageSource.FromFile("VEIcon.png"),
+                    IconSource = ImageSource.FromFile("VEIcon.jpg"),
                     ImageText = "Veritasium",
                     DetailText = "Scienece and Education",
                     URL = "https://www.youtube.com/user/1veritasium",
@@ -71,7 +71,7 @@ namespace Streamys_Winners_List
 
                 new ImageCellTemplate() //7
                 {
-                    IconSource = ImageSource.FromFile("POIcon.png"),
+                    IconSource = ImageSource.FromFile("POIcon.jpg"),
                     ImageText = "Poppy",
                     DetailText = "Breakthrough Artist",
                     URL = "https://www.youtube.com/user/thatPoppyTV",
@@ -79,7 +79,7 @@ namespace Streamys_Winners_List
 
                 new ImageCellTemplate() //8
                 {
-                    IconSource = ImageSource.FromFile("CNIcon.png"),
+                    IconSource = ImageSource.FromFile("CNIcon.jpg"),
                     ImageText = "Casey Neistat",
                     DetailText = "Cinematography",
                     URL = "https://www.youtube.com/user/caseyneistat",
@@ -87,7 +87,7 @@ namespace Streamys_Winners_List
 
                 new ImageCellTemplate() //9
                 {
-                    IconSource = ImageSource.FromFile("DSIcon.png"),
+                    IconSource = ImageSource.FromFile("DSIcon.jpg"),
                     ImageText = "DeStorm Power (“Caught”)",
                     DetailText = "Writing",
                     URL = "https://www.youtube.com/playlist?list=PLU9snlkp5CiyLEeBx5WM72esFhqwoJ1JW",
@@ -95,12 +95,11 @@ namespace Streamys_Winners_List
 
                 new ImageCellTemplate() //10
                 {
-                    IconSource = ImageSource.FromFile("COIcon.png"),
+                    IconSource = ImageSource.FromFile("COIcon.jpg"),
                     ImageText = "Corridor",
                     DetailText = "Visual and Special Effects",
                     URL = "https://www.youtube.com/user/CorridorDigital",
                 },
-
             };
 
             WebsiteListView.ItemsSource = listOfItems; //fills list view with newly filled array
