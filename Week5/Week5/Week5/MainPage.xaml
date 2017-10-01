@@ -1,13 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:StreamysListApp"
-             x:Class="StreamysListApp.MainPage"
-             Title="2017 Streamy Winners">
+             xmlns:local="clr-namespace:Week5"
+             x:Class="Week5.MainPage"
+             Title="Main Page Thinggy"
+             >
 
     <StackLayout BackgroundColor="BlanchedAlmond">
         <ListView
-            x:Name="WebsiteListView">
+            x:Name="Week5List"
+            IsPullToRefreshEnabled="True"
+            Refreshing="Handle_Refresh"
+            >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ImageCell
@@ -19,9 +23,18 @@
                         >
                         <ImageCell.ContextActions>
                             <MenuItem
-                                Text="Visit on YouTube"
+                                Text ="Open Browser"
                                 Clicked="Handle_NavigateToUrl"
                                 CommandParameter="{Binding URL}"
+                                />
+                            <MenuItem
+                                Text="Info"
+                                Clicked="Handle_To_Info"
+                                IsDestructive="False"
+                                />
+                            <MenuItem
+                                Text="Delete"
+                                Clicked="Handle_Delete_Cell"
                                 IsDestructive="True"
                             />
                         </ImageCell.ContextActions>
