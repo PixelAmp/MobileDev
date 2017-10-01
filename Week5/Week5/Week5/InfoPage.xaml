@@ -12,6 +12,14 @@
                 FontSize="Large"
                 HorizontalTextAlignment="Center"
                    />
+
+            <Label
+                x:Name="AnotherLabel"
+                Text="Butts"
+                TextColor="DarkBlue"
+                FontSize="Large"
+                HorizontalTextAlignment="Center"
+                />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
