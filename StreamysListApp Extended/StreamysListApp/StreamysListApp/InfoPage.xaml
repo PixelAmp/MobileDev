@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StreamysListApp.InfoPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid BackgroundColor="BlanchedAlmond" x:Name="MainGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+
+                <Grid x:Name="SubGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+
+                    <Image
+                    x:Name="iconBadge"
+                    Source="{Binding IconSource}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Grid.Column="0" 
+                    Grid.RowSpan="2"
+                    />
+
+                    <Label 
+                    x:Name="NameLabel"
+                    Text="{Binding ImageText}" 
+                    TextColor="Black"
+                    FontSize="20"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    VerticalOptions="Center"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                />
+                    <Label 
+                    x:Name="infoText"
+                    Text="{Binding DetailText}" 
+                    TextColor="Black"
+                    FontSize="15"
+                    HorizontalTextAlignment="Center"
+                    VerticalOptions="Center"
+                    Grid.Column="1"
+                    Grid.Row="1"
+                />
+
+                </Grid>
+
+                <Label
+                x:Name="InfoText"
+                Text="{Binding BioText}"
+                TextColor="Black"
+                FontSize="Large"
+                Grid.Row="1"
+                />
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -5,7 +5,7 @@ using System.Text;
 
 using Xamarin.Forms;
 
-namespace Week5
+namespace StreamysListApp
 {
 	public partial class App : Application
 	{
@@ -13,7 +13,8 @@ namespace Week5
 		{
 			InitializeComponent();
 
-            MainPage = new NavigationPage(new Week5.MainPage());
+			//MainPage = new StreamysListApp.MainPage();
+            MainPage = new NavigationPage(new StreamysListApp.MainPage());
         }
 
 		protected override void OnStart ()

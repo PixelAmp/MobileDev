@@ -44,10 +44,6 @@ namespace Week5
                 },
             };
 
-
-
-
-
             Week5List.ItemsSource = listOfItems; //fills list view with newly filled array
         }
 

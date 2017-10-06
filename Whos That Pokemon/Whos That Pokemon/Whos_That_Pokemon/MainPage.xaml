@@ -6,9 +6,6 @@
              Title="Start Page"
              >
 
-    
-
-
         <Grid BackgroundColor ="BlanchedAlmond">
 
             <Grid.RowDefinitions>
