@@ -8,6 +8,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="3*"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
                 <Grid x:Name="SubGrid">
@@ -23,46 +24,52 @@
 
 
                     <Image
-                    x:Name="iconBadge"
-                    Source="{Binding IconSource}"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="FillAndExpand"
-                    Grid.Column="0" 
-                    Grid.RowSpan="2"
+                        x:Name="iconBadge"
+                        Source="{Binding IconSource}"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        Grid.Column="0" 
+                        Grid.RowSpan="2"
                     />
 
                     <Label 
-                    x:Name="NameLabel"
-                    Text="{Binding ImageText}" 
-                    TextColor="Black"
-                    FontSize="20"
-                    HorizontalTextAlignment="Center"
-                    VerticalTextAlignment="Center"
-                    VerticalOptions="Center"
-                    Grid.Column="1"
-                    Grid.Row="0"
-                />
+                        x:Name="NameLabel"
+                        Text="{Binding ImageText}" 
+                        TextColor="Black"
+                        FontSize="Large"
+                        VerticalTextAlignment="Center"
+                        VerticalOptions="Center"
+                        Grid.Column="1"
+                        Grid.Row="0"
+                    />
                     <Label 
-                    x:Name="infoText"
-                    Text="{Binding DetailText}" 
-                    TextColor="Black"
-                    FontSize="15"
-                    HorizontalTextAlignment="Center"
-                    VerticalOptions="Center"
-                    Grid.Column="1"
-                    Grid.Row="1"
-                />
+                        x:Name="infoText"
+                        Text="{Binding DetailText}" 
+                        TextColor="Black"
+                        FontSize="Medium"
+                        VerticalOptions="Center"
+                        Grid.Column="1"
+                        Grid.Row="1"
+                    />
 
                 </Grid>
 
                 <Label
-                x:Name="InfoText"
-                Text="{Binding BioText}"
-                TextColor="Black"
-                FontSize="Large"
-                Grid.Row="1"
-                />
+                    x:Name="InfoText"
+                    Text="{Binding BioText}"
+                    TextColor="Black"
+                    FontSize="Large"
+                    Grid.Row="1"
+                    />
 
+                <Button
+                    Text="Visit Their YouTube Channel"
+                    TextColor="Black"
+                    Clicked="NavigateToChannel"
+                    BackgroundColor="Red"
+                    Margin ="0,0,0,0"
+                    Grid.Row="2"
+                />
             </Grid>
         </ScrollView>
     </ContentPage.Content>
