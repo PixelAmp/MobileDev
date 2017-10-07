@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Week6"
+             x:Class="Week6.MainPage">
+
+    <StackLayout x:Name="PageThing">
+       
+        <Label
+            Text="Did you add your API key? (Android Only)"
+            HorizontalOptions="Center" />
+        <Button
+            Text="Map Sample"
+            Clicked="Handle_NavigateToMapSample" />
+        <Picker
+            x:Name="SamplePicker"
+            SelectedIndexChanged="Handle_SelectedIndexChanged"
+            Title="Sample Picker"
+            Margin="10" />
+    </StackLayout>
+    
+</ContentPage>

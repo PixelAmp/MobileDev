@@ -60,8 +60,7 @@ namespace StreamysListApp
                     "by, written by and starring comedy duo Rhett McLaughlin and Link Neal. The series premiered with episodes one and " +
                     "two being released on October 19, 2016 on Rhett and Link's Good Mythical Morning channel. Plot consists of Rhett and " +
                     "Link's co-ex-girlfriend is now a famous infomercial star, who is threatening to take control of the duo's famous show, " +
-                    "Good Mythical Morning. They must work together on an adventure to get it back."
-"
+                    "Good Mythical Morning. They must work together on an adventure to get it back.",
                 },
 
                 new ImageCellTemplate() //4
@@ -72,8 +71,7 @@ namespace StreamysListApp
                     URL = "https://www.youtube.com/playlist?list=PL5vtqDuUM1DmXwYYAQcyUwtcalp_SesZD",
                     BioText = "Steven and Andrew (along with their camera and sound guy, Adam) travel from restaurant to restaurant " +
                     "trying the best foods at various price points. They start with the least expensive foods and work their way up to " +
-                    "the most extravagant, decadent, over-the-top foods in existence to find out which one is the most worth its price"
-"
+                    "the most extravagant, decadent, over-the-top foods in existence to find out which one is the most worth its price",
                 },
 
                 new ImageCellTemplate() //5
@@ -83,7 +81,7 @@ namespace StreamysListApp
                     DetailText = "News and Culture",
                     URL = "https://www.youtube.com/user/TheYoungTurks",
                     BioText = "The Young Turks (TYT) is an American news and commentary program on YouTube, which also serves as the" +
-                    " flagship program of the TYT Network, a multi-channel network of associated web series focusing on news and current events."
+                    " flagship program of the TYT Network, a multi-channel network of associated web series focusing on news and current events.",
                 },
 
                 new ImageCellTemplate() //6
@@ -106,7 +104,7 @@ namespace StreamysListApp
                     URL = "https://www.youtube.com/user/thatPoppyTV",
                     BioText = "Poppy, also known as That Poppy, is an American singer, songwriter, ambient music composer and YouTube " +
                     "personality. She moved to Los Angeles in 2014 to pursue a musical career, where she signed with Island Records and " +
-                    "released her debut EP, Bubblebath (2016). In late 2016, she became the face of Sanrio's \"Hello Sanrio\" collection."
+                    "released her debut EP, Bubblebath (2016). In late 2016, she became the face of Sanrio's \"Hello Sanrio\" collection.",
                 },
 
                 new ImageCellTemplate() //8
@@ -120,8 +118,7 @@ namespace StreamysListApp
                     "Outer Space and the Baby\", Neistat stated that he sees his vlogs more as a forum as opposed to a daily journal. On January 19, " +
                     "2016 Neistat posted his 300th vlog. As a result of vlogging everyday, Neistat said he has chosen to refrain from making any " +
                     "feature length content. Neistat is frequently seen using and discussing his collection of Boosted boards in his daily vlogs, " +
-                    "which are sometimes showcased in his other YouTube videos."
-"
+                    "which are sometimes showcased in his other YouTube videos.",
 
                 },
 
@@ -134,7 +131,7 @@ namespace StreamysListApp
                     BioText = "Destorm is an American Music Award, Streamy Award and YouTube Award winning" +
                     " musician/actor/comedian with over 12 million followers across various social platforms " +
                     "including Facebook, Instagram and YouTube. He has had over 3.5 billion video views across " +
-                    "all major social platforms of serialized short form scripted, video content. "
+                    "all major social platforms of serialized short form scripted, video content. ",
                 },
 
                 new ImageCellTemplate() //10
@@ -146,7 +143,7 @@ namespace StreamysListApp
                     BioText = "Corridor Digital is a company located in Los Angeles, USA. Corridor Digital uploads" +
                     " short movies to YouTube every month. They specialise in visual special effects and physical effects." +
                     " It was founded by YouTubers; Sam Gorski, Niko Pueringer and Jake Watson. They currently have a total " +
-                    "of 4.4 million subscribers."
+                    "of 4.4 million subscribers.",
                 },
             };
 
