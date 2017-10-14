@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Week7"
+             x:Class="Week7.MainPage"
+             Title="FirstPage">
+
+    <!--
+    //moved this to the app.xaml so that it can be used by other pages than just the main page
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="BGColor">BlanchedAlmond</Color>
+            <Color x:Key="DetailColor">Black</Color>
+            <Color x:Key="TitleColor">Black</Color>
+            <Color x:Key="ButtonColor">Gray</Color>
+            <x:Double x:Key="DetailFontSize">22</x:Double>
+            <x:Double x:Key="TitleFontSize">44</x:Double>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    -->
+
+    <StackLayout BackgroundColor="{DynamicResource BGColor}" Padding="10">
+
+        <Label
+            x:Name="TitleLabel"
+            Text="It is is week 7 now"
+            FontSize="{DynamicResource TitleFontSize}"
+            TextColor="{DynamicRecource TitleColor}"
+            />
+        <Label
+            x:Name="DetailLabel"
+            Text="This week we're going over style management and stuff"
+            FontSize="{DynamicResource DetailFontSize}"
+            TextColor="{DynamicRecource DetailColor}"
+            />
+        <Button
+            x:Name="TitleChange"
+            Clicked="TitleClicked"
+            HorizontalOptions="Center"
+            Text="Click me to change title"
+            BackgroundColor="{StaticResource ButtonColor}"
+            />
+
+        <Button
+            x:Name="DetailChange"
+            Clicked="DetailClicked"
+            HorizontalOptions="Center"
+            Text="Click me to change Detail"
+            BackgroundColor="{StaticResource ButtonColor}"
+            />
+
+        <Button
+            x:Name="BGChange"
+            Clicked="BGClicked"
+            HorizontalOptions="Center"
+            Text="Click me to change Background"
+            BackgroundColor="{StaticResource ButtonColor}"
+            />
+    </StackLayout>
+</ContentPage>
