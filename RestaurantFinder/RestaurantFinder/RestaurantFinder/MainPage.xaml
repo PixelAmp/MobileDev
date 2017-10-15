@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RestaurantFinder"
+             x:Class="RestaurantFinder.MainPage"
+              Title="CA-78 Restraunt Finder">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="BlanchedAlmond">
+
+            <Label
+                Text="Choose a Restraunt to get its location and address"
+                TextColor="Black"
+                FontSize="Large"
+                HorizontalTextAlignment="Center"
+                />
+            <Button
+                Text="Two Brothers from Italy"
+                Clicked="Handle_NavigateToMap" 
+                BackgroundColor="LightPink"
+                />
+            <Button
+                Text="Hungry Bear Deli"
+                Clicked="Handle_NavigateToMap" 
+                BackgroundColor="LightSteelBlue"
+                />
+            <Button
+                Text="Tacos Alex"
+                Clicked="Handle_NavigateToMap" 
+                BackgroundColor="LightCyan"
+                />
+            <Button
+                Text="Leucadia Pizzeria"
+                Clicked="Handle_NavigateToMap" 
+                BackgroundColor="LightBlue"
+                />
+            <Button
+                Text="Hyuga Sushi"
+                Clicked="Handle_NavigateToMap" 
+                BackgroundColor="LightGreen"
+                />
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

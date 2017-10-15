@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace SoCalTour.iOS
+namespace RestaurantFinder.iOS
 {
 	public class Application
 	{
@@ -15,6 +15,8 @@ namespace SoCalTour.iOS
 			// if you want to use a different Application Delegate class from "AppDelegate"
 			// you can specify it here.
 			UIApplication.Main(args, null, "AppDelegate");
-		}
-	}
+            Xamarin.FormsMaps.Init();
+
+        }
+    }
 }

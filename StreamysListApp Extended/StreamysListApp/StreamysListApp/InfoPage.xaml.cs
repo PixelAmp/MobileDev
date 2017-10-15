@@ -20,9 +20,6 @@ namespace StreamysListApp
             url = CellInfo.URL;
         }
 
-        void NavigateToChannel(object sender, System.EventArgs e)
-        {
-            Device.OpenUri(new Uri(url));
-        }
+        void NavigateToChannel(object sender, System.EventArgs e) => Device.OpenUri(new Uri(url));
     }
 }

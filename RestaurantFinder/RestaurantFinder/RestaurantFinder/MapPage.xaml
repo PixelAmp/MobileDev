@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="RestaurantFinder.MapPage"
+             Title="Restaurant Location">
+    <ContentPage.Content>        
+        <StackLayout
+            VerticalOptions="StartAndExpand"
+            Padding="10"
+            BackgroundColor="BlanchedAlmond">
+            <maps:Map
+                x:Name="RestMap"
+                WidthRequest="400"
+                HeightRequest="450"
+                IsShowingUser="true"
+                MapType="Hybrid" />
+
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Text="Street"
+                    Clicked="Handle_C2Street" 
+                    BackgroundColor="LightGoldenrodYellow"
+                    Grid.Column="0"
+                    />
+                <Button
+                    Text="Satellite"
+                    Clicked="Handle_C2Sat" 
+                    BackgroundColor="LightGreen"
+                    Grid.Column="1"
+                    />
+                <Button
+                    Text="Hybrid"
+                    Clicked="Handle_C2Hybrid" 
+                    BackgroundColor="LightCoral"
+                    Grid.Column="2"
+                    />
+            </Grid>
+        </StackLayout>        
+    </ContentPage.Content>
+</ContentPage>
