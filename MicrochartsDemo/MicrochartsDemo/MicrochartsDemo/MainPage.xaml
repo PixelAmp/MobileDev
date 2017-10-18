@@ -1,17 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:MicrochartsDemo"
-             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
-             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" 
-             x:Class="MicrochartsDemo.MainPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <forms:ChartView 
-                x:Name="FirstChart"
-                HeightRequest="150"
-                
-                />
-        </StackLayout>
-    </ContentPage.Content>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" 
+    xmlns:local="clr-namespace:Microcharts.Samples.Forms" 
+    x:Class="Microcharts.Samples.Forms.MainPage">
+
+    <microcharts:ChartView x:Name="chartView" />
+
 </ContentPage>
