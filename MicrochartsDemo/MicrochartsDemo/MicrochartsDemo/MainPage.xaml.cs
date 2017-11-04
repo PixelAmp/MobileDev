@@ -7,30 +7,34 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 
 
-
 namespace MicrochartsDemo
 {
-    
     public partial class MainPage : ContentPage
     {
-        ///*
-        List<Microcharts.Entry> entries = new List<Microcharts.Entry>
+        public MainPage()
         {
-            new Entry(200)
+            InitializeComponent();
+        }
+
+
+        List<Entry> entries = new List<Entry>
+        {
+            new Entry()
             {
+                
                 Label = "January",
                 ValueLabel = "200",
                 FillColor = SKColor.Parse("#266489")
             },
 
 
-            new Entry(400)
+            new Entry()
             {
                 Label = "February",
                 ValueLabel = "400",
                 FillColor = SKColor.Parse("#68B9C0")
             },
-            new Entry(-100)
+            new Entry()
             {
                 Label = "March",
                 ValueLabel = "-100",
@@ -38,9 +42,7 @@ namespace MicrochartsDemo
             }
 
         };
-        //*/
-
-
+        
         /*
         protected override void OnAppearing()
         {
@@ -68,13 +70,10 @@ namespace MicrochartsDemo
 
             var chart = new BarChart() { Entries = entries };
             //var chart2 = new LineChart() { Entries = entries };
+           ]
+
             this.chartView.Chart = chart;
         }
-        /*
-
-        public MainPage()
-        {
-            InitializeComponent();
-        }
+        */
     }
 }
