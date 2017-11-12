@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="PokedexAPI.Views.MainPage"
+             Title="Pokedex">
+
+
+
+
+    <StackLayout
+        Padding="0,20,0,0"
+        HorizontalOptions="Center"
+        VerticalOptions="Start">
+
+
+        <StackLayout
+            Orientation="Horizontal"
+            HorizontalOptions="CenterAndExpand">
+            <Entry
+                Placeholder="Enter Name or Number"
+                Text="{Binding PokemonEnteredByUser}"
+                WidthRequest="200" />
+            <Button
+                Text="Search Pokemon"
+                Command="{Binding GetPokemonCommand}" />
+        </StackLayout>
+
+
+        <ListView
+            x:Name="PokemonListView"
+            ItemsSource="{Binding PokedexCollection}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell
+                        x:Name="PokedexItemCell">
+                        <ViewCell.ContextActions>
+                            <MenuItem
+                                x:Name="MoreInfoButton"
+                                AutomationId="MoreInfoButton"
+                                BindingContext="{Binding Source={x:Reference PokedexListView}, Path=BindingContext}"
+                                Command="{Binding NavToMoreInfoPageCommand}"
+                                CommandParameter="{Binding Source={x:Reference PokedexItemCell}, Path=BindingContext}"
+                                Text="More" />
+                        </ViewCell.ContextActions>
+                        <ViewCell.View>
+                            <StackLayout
+                                Orientation="Horizontal">
+                                <Label
+                                    x:Name="PokemonNameLabel"
+                                    Text="{Binding Name}"
+                                    VerticalOptions="Center"
+                                    Margin="10" />
+                                <Label
+                                    x:Name="NatDexNumLabel"
+                                    Text="{Binding Main.Temp, StringFormat='National Dex #: {0}'}"
+                                    VerticalOptions="Center"
+                                    Margin="3" />
+                                <Label
+                                    x:Name="TypesLabel"
+                                    Text="{Binding Clouds.All, StringFormat='Type(s): {0}'}"
+                                    VerticalOptions="Center"
+                                    Margin="3" />
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
