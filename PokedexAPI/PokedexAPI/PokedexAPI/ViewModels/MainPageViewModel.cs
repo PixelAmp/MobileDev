@@ -14,6 +14,7 @@ namespace PokedexAPI.ViewModels
 {
     public class MainPageViewModel : BindableBase, INavigationAware
     {
+        public DelegateCommand TestingCommand { get; set; }
         public DelegateCommand GetPokemonCommand { get; set; }
         public DelegateCommand<PokedexItem> NavToMoreInfoPageCommand { get; set; }
 
@@ -53,9 +54,11 @@ namespace PokedexAPI.ViewModels
             //I think that this section just waits for commands to occur and sends the commands to the appropriate event
             _navigationService = navigationService;
 
+            TestingCommand = new DelegateCommand(TestingFunc);
+
             GetPokemonCommand = new DelegateCommand(GetPokemon);
             NavToMoreInfoPageCommand = new DelegateCommand<PokedexItem>(NavToMoreInfoPage);
-
+      
         }
 
         //navigate to new page
@@ -67,6 +70,7 @@ namespace PokedexAPI.ViewModels
             await _navigationService.NavigateAsync("MoreInfoPage", navParams);
         }
 
+        
 
         internal async void GetPokemon()
         {
@@ -74,9 +78,17 @@ namespace PokedexAPI.ViewModels
             HttpClient client = new HttpClient(); //makes new accesable HTTP client
 
             //calls website, sending the user entry, website responds and sends back data
-            var uri = new Uri(string.Format( $"http://pokeapi.co/api/v2/pokemon/{PokemonEnteredByUser}/")); 
+            //var uri = new Uri(string.Format( $"http://pokeapi.co/api/v2/pokemon/{PokemonEnteredByUser}/"));
+
+            var uri = new Uri("https://pokeapi.co/api/v2/pokemon/" + PokemonEnteredByUser + "/");
+
+
+            //THERE IS AN ERROR HERE WHERE THE APP BREAKS FOR NO REASON I DON'T KNOW HOW TO FIX IT
+            //I looked into the data the API is sendiong me and have decided to abandon this project and work on a different API
+            //This pokemon one give a LOT of useless information that is far too comp[icated to display
             var response = await client.GetAsync(uri);
 
+            
             PokedexItem PokedexData = null;
             if (response.IsSuccessStatusCode)
             {
@@ -92,6 +104,17 @@ namespace PokedexAPI.ViewModels
             navParams.Add("NavFromPage", "MainPageViewModel");
             await _navigationService.NavigateAsync("SamplePageForNavigation", navParams);
         }
+
+
+
+
+
+        private void TestingFunc()
+        {
+            PokedexItem PokedexData = null;
+            
+        }
+
 
 
         public void OnNavigatedFrom(NavigationParameters parameters)
