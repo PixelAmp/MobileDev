@@ -79,9 +79,14 @@ namespace TMDb_API_app.ViewModels
 
             HttpClient client = new HttpClient(); //makes new accesable HTTP client
 
-            var uri = new Uri( //gets the URI from openweather
-                string.Format(
-                    $"http://api.openweathermap.org/data/2.5/weather?q={LocationEnteredByUser}&units=imperial&APPID=" + $"5da8d96113a5c72f1f9836c3c84a6351"));
+            //gets the URI from openweather
+            var uri = new Uri(string.Format($"http://api.openweathermap.org/data/2.5/weather?q={LocationEnteredByUser}&units=imperial&APPID=" + $"5da8d96113a5c72f1f9836c3c84a6351"));
+
+
+            uri = new Uri(string.Format($"https://api.themoviedb.org/3/movie/{LocationEnteredByUser}?api_key=145877ef7a4418f79d855ef763fa0698"));
+
+
+
             var response = await client.GetAsync(uri);
 
             WeatherItem weatherData = null;
