@@ -35,7 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Models\TMDbItemModel.cs" />
+    <Compile Include="Models\TMDbMovieModel.cs" />
+    <Compile Include="Models\WeatherModel.cs" />
+    <Compile Include="Models\TMDbSearchModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
   </ItemGroup>

@@ -9,7 +9,9 @@
     <StackLayout
         Padding="0,20,0,0"
         HorizontalOptions="Center"
-        VerticalOptions="Start">
+        VerticalOptions="Start"
+        BackgroundColor="Lime"
+        >
 
         <Button
             Text="Navigation Example"
@@ -19,18 +21,18 @@
             Orientation="Horizontal"
             HorizontalOptions="CenterAndExpand">
             <Entry
-                Placeholder="Enter Location"
-                Text="{Binding LocationEnteredByUser}"
+                Placeholder="Enter Movie"
+                Text="{Binding MovieEnteredByUser}"
                 WidthRequest="200" />
             <Button
-                Text="Search Weather"
-                Command="{Binding GetWeatherForLocationCommand}" />
+                Text="Search Movie"
+                Command="{Binding SearchMovieCommand}" />
         </StackLayout>
 
 
         <ListView
             x:Name="WeatherListView"
-            ItemsSource="{Binding WeatherCollection}">
+            ItemsSource="{Binding MovieCollection}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell
@@ -39,27 +41,28 @@
                             <MenuItem
                                 x:Name="MoreInfoButton"
                                 AutomationId="MoreInfoButton"
-                                BindingContext="{Binding Source={x:Reference WeatherListView}, Path=BindingContext}"
+                                BindingContext="{Binding Source={x:Reference MovieListView}, Path=BindingContext}"
                                 Command="{Binding NavToMoreInfoPageCommand}"
-                                CommandParameter="{Binding Source={x:Reference WeatherItemCell}, Path=BindingContext}"
+                                CommandParameter="{Binding Source={x:Reference MovieItemCell}, Path=BindingContext}"
                                 Text="More" />
                         </ViewCell.ContextActions>
+                        
                         <ViewCell.View>
                             <StackLayout
                                 Orientation="Horizontal">
                                 <Label
                                     x:Name="LocationNameLabel"
-                                    Text="{Binding Name}"
+                                    Text="{Binding Title}"
                                     VerticalOptions="Center"
                                     Margin="10" />
                                 <Label
                                     x:Name="TemperatureLabel"
-                                    Text="{Binding Main.Temp, StringFormat='Temp: {0}'}"
+                                    Text="{Binding Vote_Average, StringFormat='Vote Average: {0}'}"
                                     VerticalOptions="Center"
                                     Margin="3" />
                                 <Label
                                     x:Name="CloudLabel"
-                                    Text="{Binding Clouds.All, StringFormat='Cloud %: {0}'}"
+                                    Text="{Binding tagline, StringFormat='Tagline: {0}'}"
                                     VerticalOptions="Center"
                                     Margin="3" />
                             </StackLayout>

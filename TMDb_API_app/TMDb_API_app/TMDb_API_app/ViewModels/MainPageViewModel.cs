@@ -2,21 +2,20 @@
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 using System.Collections.ObjectModel;
 using System.Net.Http;
-using static LearnWeatherAPI.Models.TMDbItemModel;
-using System.Runtime.CompilerServices;
+using static TMDb_API_app.Models.TMDbMovieModel; //hold model for movie
+using static TMDb_API_app.Models.TMDbSearchModel; //holds movie's id to use to search for the movie
+
 
 namespace TMDb_API_app.ViewModels
 {
     public class MainPageViewModel : BindableBase, INavigationAware
     {
         public DelegateCommand NavToNewPageCommand { get; set; }
-        public DelegateCommand GetWeatherForLocationCommand { get; set; }
-        public DelegateCommand<WeatherItem> NavToMoreInfoPageCommand { get; set; }
+        public DelegateCommand SearchMovieCommand { get; set; }
+        public DelegateCommand<MovieItem> NavToMoreInfoPageCommand { get; set; }
 
         private string _title; // this is only used by the default thing, could probably delete/remove
         public string Title
@@ -32,19 +31,19 @@ namespace TMDb_API_app.ViewModels
             set { SetProperty(ref _buttonText, value); }
         }
 
-        private string _locationEnteredByUser; //hold the user euntery
-        public string LocationEnteredByUser
+        private string _movieEnteredByUser; //hold the user euntery
+        public string MovieEnteredByUser
         {
-            get { return _locationEnteredByUser; }
-            set { SetProperty(ref _locationEnteredByUser, value); }
+            get { return _movieEnteredByUser; }
+            set { SetProperty(ref _movieEnteredByUser, value); }
         }
 
-        //list of weather locations
-        private ObservableCollection<WeatherItem> _weatherCollection = new ObservableCollection<WeatherItem>();
-        public ObservableCollection<WeatherItem> WeatherCollection
+        //holds all the movies that have been searched
+        private ObservableCollection<MovieItem> _movieCollection = new ObservableCollection<MovieItem>();
+        public ObservableCollection<MovieItem> MovieCollection
         {
-            get { return _weatherCollection; }
-            set { SetProperty(ref _weatherCollection, value); }
+            get { return _movieCollection; }
+            set { SetProperty(ref _movieCollection, value); }
         }
 
         INavigationService _navigationService; //provides page navigation for View Models
@@ -56,46 +55,52 @@ namespace TMDb_API_app.ViewModels
             _navigationService = navigationService;
 
             NavToNewPageCommand = new DelegateCommand(NavToNewPage);
-            GetWeatherForLocationCommand = new DelegateCommand(GetWeatherForLocation);
-            NavToMoreInfoPageCommand = new DelegateCommand<WeatherItem>(NavToMoreInfoPage);
-
-            //Title = "Xamarin Forms Application + Prism";
-            //ButtonText = "Add Name";
-
+            SearchMovieCommand = new DelegateCommand(GetMovieID);
+            NavToMoreInfoPageCommand = new DelegateCommand<MovieItem>(NavToMoreInfoPage);
         }
 
         //navigate to new page
         //Don't know what this does right now...
-        private async void NavToMoreInfoPage(WeatherItem weatherItem)
+        //pribably going to take this out
+        private async void NavToMoreInfoPage(MovieItem movieItem)
         {
             var navParams = new NavigationParameters();
-            navParams.Add("WeatherItemInfo", weatherItem);
+            navParams.Add("MovieItemInfo", movieItem);
             await _navigationService.NavigateAsync("MoreInfoPage", navParams);
         }
 
-        internal async void GetWeatherForLocation()
+        //uses Search API and gets ID of the first result, then sends it to the Movie API
+        internal async void GetMovieID()
         {
-            //need Microsoft.Net.Http to use HTTP (and maybe Microsoft.BCL.Build if you're having issues like me)
-
-            HttpClient client = new HttpClient(); //makes new accesable HTTP client
-
-            //gets the URI from openweather
-            var uri = new Uri(string.Format($"http://api.openweathermap.org/data/2.5/weather?q={LocationEnteredByUser}&units=imperial&APPID=" + $"5da8d96113a5c72f1f9836c3c84a6351"));
-
-
-            uri = new Uri(string.Format($"https://api.themoviedb.org/3/movie/{LocationEnteredByUser}?api_key=145877ef7a4418f79d855ef763fa0698"));
-
-
-
+            HttpClient client = new HttpClient();
+            var uri = new Uri(string.Format($"https://api.themoviedb.org/3/search/movie?api_key=145877ef7a4418f79d855ef763fa0698&language=en-US&query={MovieEnteredByUser}&page=1&include_adult=false"));
             var response = await client.GetAsync(uri);
-
-            WeatherItem weatherData = null;
+            SearchItem SearchData = null;
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
-                weatherData = WeatherItem.FromJson(content);
+                SearchData = SearchItem.FromJson(content);
+
+                //sends movie ID along to next function
+                GetMovieInfo(120); 
+            }           
+        }
+
+        //gets the Movie ID from the search function and retrives the data from the 
+        internal async void GetMovieInfo(int MovieID)
+        {
+            HttpClient client = new HttpClient(); 
+            var uri = new Uri(string.Format($"https://api.themoviedb.org/3/movie/{MovieID}?language=en-US&api_key=145877ef7a4418f79d855ef763fa0698"));
+            
+            var response = await client.GetAsync(uri);
+
+            MovieItem MovieData = null;
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                MovieData = MovieItem.FromJson(content);
             }
-            WeatherCollection.Add(weatherData);
+            MovieCollection.Add(MovieData);
         }
 
         private async void NavToNewPage()

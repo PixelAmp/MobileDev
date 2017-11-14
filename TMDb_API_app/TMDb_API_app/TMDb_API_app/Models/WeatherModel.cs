@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 
 
-namespace LearnWeatherAPI.Models
+namespace TMDb_API_app.Models
 {
-    public static class TMDbItemModel
+    public static class WeatherModel
     {
         public partial class WeatherItem
         {
