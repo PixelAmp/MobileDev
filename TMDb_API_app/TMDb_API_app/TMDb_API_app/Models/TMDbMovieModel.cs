@@ -46,9 +46,43 @@ namespace TMDb_API_app.Models
             [JsonProperty("vote_count")]
             public int VoteCount { get; set; }
 
-            
+            [JsonProperty("genres")]
+            public Genres[] Genres{ get; set; }
+
+            genres array[object]
+            id integer
+            name string
+
+
+            production_companies    array[object]
+            name    string
+            id  integer
+
+            production_countries    array[object]
+            iso_3166_1  string
+            name        string
+
+            spoken_languages    array[object]
+            iso_639_1   string
+            name        string
+
+
         }
 
+        public partial class Genres
+        {
+            [JsonProperty("icon")]
+            public string Icon { get; set; }
+
+            [JsonProperty("description")]
+            public string Description { get; set; }
+
+            [JsonProperty("id")]
+            public long Id { get; set; }
+
+            [JsonProperty("main")]
+            public string Main { get; set; }
+        }
 
         public partial class MovieItem
         {
@@ -61,8 +95,8 @@ namespace TMDb_API_app.Models
         {
             public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
             {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                DateParseHandling = DateParseHandling.None,
+                //MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
+                //DateParseHandling = DateParseHandling.None,
             };
         }
     }

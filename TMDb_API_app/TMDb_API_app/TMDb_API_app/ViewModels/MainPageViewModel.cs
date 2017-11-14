@@ -102,7 +102,7 @@ namespace TMDb_API_app.ViewModels
                 var content = await response.Content.ReadAsStringAsync();
                 MovieData = MovieItem.FromJson(content); //-------------------------------------------------------------------------------------------------------------------------------------------
             }
-            MovieCollection.Add(MovieData);
+           MovieCollection.Add(MovieData);
         }
 
         private async void NavToNewPage()
