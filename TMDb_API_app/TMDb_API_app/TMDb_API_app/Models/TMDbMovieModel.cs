@@ -49,6 +49,7 @@ namespace TMDb_API_app.Models
             
         }
 
+
         public partial class MovieItem
         {
             public static MovieItem FromJson(string json) => JsonConvert.DeserializeObject<MovieItem>(json, Converter.Settings);

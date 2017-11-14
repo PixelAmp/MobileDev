@@ -84,6 +84,7 @@ namespace TMDb_API_app.ViewModels
                 //sends movie ID along to next function
                 GetMovieInfo(120); 
             }           
+
         }
 
         //gets the Movie ID from the search function and retrives the data from the 
@@ -95,10 +96,11 @@ namespace TMDb_API_app.ViewModels
             var response = await client.GetAsync(uri);
 
             MovieItem MovieData = null;
+
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
-                MovieData = MovieItem.FromJson(content);
+                MovieData = MovieItem.FromJson(content); //-------------------------------------------------------------------------------------------------------------------------------------------
             }
             MovieCollection.Add(MovieData);
         }

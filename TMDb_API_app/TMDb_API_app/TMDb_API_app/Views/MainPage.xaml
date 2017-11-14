@@ -10,7 +10,7 @@
         Padding="0,20,0,0"
         HorizontalOptions="Center"
         VerticalOptions="Start"
-        BackgroundColor="Lime"
+        BackgroundColor= "#89CFF0"
         >
 
         <Button
