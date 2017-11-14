@@ -2,20 +2,23 @@
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
-
+using System.Collections.Generic;
+using System.Linq;
 using System.Collections.ObjectModel;
 using System.Net.Http;
 using static TMDb_API_app.Models.TMDbMovieModel; //hold model for movie
+using System.Runtime.CompilerServices;
 using static TMDb_API_app.Models.TMDbSearchModel; //holds movie's id to use to search for the movie
+
 
 
 namespace TMDb_API_app.ViewModels
 {
     public class MainPageViewModel : BindableBase, INavigationAware
     {
-        public DelegateCommand NavToNewPageCommand { get; set; }
         public DelegateCommand SearchMovieCommand { get; set; }
         public DelegateCommand<MovieItem> NavToMoreInfoPageCommand { get; set; }
+        public DelegateCommand<MovieItem> DeleteCellCommand { get; set; }
 
         private string _title; // this is only used by the default thing, could probably delete/remove
         public string Title
@@ -51,22 +54,24 @@ namespace TMDb_API_app.ViewModels
 
         public MainPageViewModel(INavigationService navigationService)
         {
-            //I think that this section just waits for commands to occur and sends the commands to the appropriate event
             _navigationService = navigationService;
-
-            NavToNewPageCommand = new DelegateCommand(NavToNewPage);
+                     
             SearchMovieCommand = new DelegateCommand(GetMovieID);
             NavToMoreInfoPageCommand = new DelegateCommand<MovieItem>(NavToMoreInfoPage);
+            DeleteCellCommand = new DelegateCommand<MovieItem>(Handle_Delete_Cell);
         }
 
-        //navigate to new page
-        //Don't know what this does right now...
-        //pribably going to take this out
+        //navigate to new page, passing the data of the current paramiter
         private async void NavToMoreInfoPage(MovieItem movieItem)
         {
             var navParams = new NavigationParameters();
             navParams.Add("MovieItemInfo", movieItem);
             await _navigationService.NavigateAsync("MoreInfoPage", navParams);
+        }
+
+        void Handle_Delete_Cell(MovieItem movieItem)
+        {
+            MovieCollection.Remove(movieItem);
         }
 
         //uses Search API and gets ID of the first result, then sends it to the Movie API
@@ -75,16 +80,19 @@ namespace TMDb_API_app.ViewModels
             HttpClient client = new HttpClient();
             var uri = new Uri(string.Format($"https://api.themoviedb.org/3/search/movie?api_key=145877ef7a4418f79d855ef763fa0698&language=en-US&query={MovieEnteredByUser}&page=1&include_adult=false"));
             var response = await client.GetAsync(uri);
+
             SearchItem SearchData = null;
+
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
                 SearchData = SearchItem.FromJson(content);
 
-                //sends movie ID along to next function
-                GetMovieInfo(120); 
-            }           
+                //IDThing = SearchData.Results[0].ID;
 
+                //sends movie ID along to next function
+                GetMovieInfo(SearchData.Results[0].ID); 
+            }
         }
 
         //gets the Movie ID from the search function and retrives the data from the 
@@ -100,21 +108,12 @@ namespace TMDb_API_app.ViewModels
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
-                MovieData = MovieItem.FromJson(content); //-------------------------------------------------------------------------------------------------------------------------------------------
+                MovieData = MovieItem.FromJson(content);
             }
            MovieCollection.Add(MovieData);
         }
 
-        private async void NavToNewPage()
-        {
-            var navParams = new NavigationParameters();
-            navParams.Add("NavFromPage", "MainPageViewModel");
-            await _navigationService.NavigateAsync("SamplePageForNavigation", navParams);
-        }
-
-
-
-
+       
 
         public void OnNavigatedFrom(NavigationParameters parameters)
         {

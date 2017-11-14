@@ -7,11 +7,20 @@ namespace TMDb_API_app.Models
 {
     public static class TMDbSearchModel
     {
-        public partial class SearhItem
+        public partial class SearchItem
         {
             //holds the movie id that will be used to get to the movie's page itself
+            [JsonProperty("results")]
+            public Results[] Results { get; set; }
+        }
+
+        public partial class Results
+        {
             [JsonProperty("id")]
-            public int MovieID { get; set; }
+            public int ID { get; set; }
+
+            [JsonProperty("title")]
+            public string MovieTitle { get; set; }
         }
 
         public partial class SearchItem

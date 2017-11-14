@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    x:Class="TMDb_API_app.Views.MoreInfoPage">
+
+
+    <ScrollView BackgroundColor="#89CFF0">
+        <StackLayout>
+            <Label
+                Text="{Binding MovieItem.MovieID, StringFormat='TMDb Movie ID:{0}'}"
+                HorizontalOptions="Center"
+                />
+            
+            <Label
+                Text="{Binding MovieItem.Title}" 
+                TextColor="Black"
+                FontSize="30"
+                HorizontalOptions="Center"
+                />
+
+            <Label
+                Text="{Binding MovieItem.ReleaseDate}" 
+                HorizontalOptions="Center"
+                TextColor="Black"
+                />
+
+            <StackLayout
+                Orientation="Horizontal"
+                VerticalOptions="Center"
+                >
+                <Label
+                    Text="{Binding MovieItem.Runtime,StringFormat='Runtime: 
+                    {0}'}"
+                    WidthRequest="100"
+                    />
+
+                <Label
+                    Text="{Binding MovieItem.VoteAverage, StringFormat='Rating: {0}/10'}"
+                    WidthRequest="100"
+                    />
+
+                <Label
+                    Text="{Binding MovieItem.VoteCount, StringFormat='Votes Cast:
+                    {0}'}"
+                    WidthRequest="100"
+                    />
+
+                <Label
+                    x:Name="TaglineLabel"
+                    Text="{Binding MovieItem.Popularity, StringFormat='#{0}'}"
+                    WidthRequest="100"
+                    />
+            </StackLayout>
+
+            <StackLayout>
+                <Label
+                    Text="Overview:"
+                    TextColor="Black"
+                    FontSize="Medium"
+                    />
+
+                <Label
+                    Text="{Binding MovieItem.OverView, StringFormat='{0}'}" 
+                    HeightRequest="500"/>
+            </StackLayout>
+            
+            <Label
+                Text="{Binding MovieItem.Budget, StringFormat='Budget: {0}'}" />
+
+            <Label
+                Text="{Binding MovieItem.Revenue, StringFormat='Revenue: {0}'}" />
+
+            <Label
+                Text="{Binding MovieItem.OriginalLanguage, StringFormat='Original Language: {0}'}" />
+        </StackLayout>
+    </ScrollView>    
+</ContentPage>

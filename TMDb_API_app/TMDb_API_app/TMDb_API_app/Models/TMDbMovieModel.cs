@@ -3,7 +3,6 @@ using System.Net;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-
 namespace TMDb_API_app.Models
 {
     public static class TMDbMovieModel
@@ -13,27 +12,30 @@ namespace TMDb_API_app.Models
             [JsonProperty("budget")]
             public int Budget { get; set; }
 
+            [JsonProperty("id")]
+            public int MovieID { get; set; }
+            
             [JsonProperty("original_language")]
             public string OriginalLanguage { get; set; }
 
             [JsonProperty("original_title")]
             public string OriginalTitle { get; set; }
-
+            
             [JsonProperty("overview")]
             public string Overview { get; set; }
 
             [JsonProperty("popularity")]
-            public int Popularity { get; set; }
+            public float Popularity { get; set; }
 
             [JsonProperty("revenue")]
             public int Revenue { get; set; }
-
+            
             [JsonProperty("release_date")]
             public string ReleaseDate { get; set; }
 
             [JsonProperty("runtime")]
             public int Runtime { get; set; }
-
+            
             [JsonProperty("title")]
             public string Title { get; set; }
 
@@ -41,48 +43,61 @@ namespace TMDb_API_app.Models
             public string Tagline { get; set; }
 
             [JsonProperty("vote_average")]
-            public int VoteAverage { get; set; }
-
+            public float VoteAverage { get; set; }
+            
             [JsonProperty("vote_count")]
             public int VoteCount { get; set; }
 
             [JsonProperty("genres")]
             public Genres[] Genres{ get; set; }
+            
+            [JsonProperty("production_companies")]
+            public ProductionCompanies[] ProductionCompanies { get; set; }
 
-            genres array[object]
-            id integer
-            name string
-
-
-            production_companies    array[object]
-            name    string
-            id  integer
-
-            production_countries    array[object]
-            iso_3166_1  string
-            name        string
-
-            spoken_languages    array[object]
-            iso_639_1   string
-            name        string
-
-
+            [JsonProperty("production_countries")]
+            public ProductionCountries[] ProductionCountries { get; set; }
+            
+            [JsonProperty("spoken_languages")]
+            public SpokenLanguages[] SpokenLanguages { get; set; }
+            
         }
 
         public partial class Genres
         {
-            [JsonProperty("icon")]
-            public string Icon { get; set; }
-
-            [JsonProperty("description")]
-            public string Description { get; set; }
-
             [JsonProperty("id")]
-            public long Id { get; set; }
+            public int ID { get; set; }
 
-            [JsonProperty("main")]
-            public string Main { get; set; }
+            [JsonProperty("name")]
+            public string Name { get; set; }
         }
+
+        public partial class ProductionCompanies
+        {
+            [JsonProperty("id")]
+            public int ID { get; set; }
+
+            [JsonProperty("name")]
+            public string Name { get; set; }
+        }
+
+        public partial class ProductionCountries
+        {
+            [JsonProperty("iso_3166_1")]
+            public string iso_3166_1 { get; set; }
+
+            [JsonProperty("name")]
+            public string Name { get; set; }
+        }
+
+        public partial class SpokenLanguages
+        {
+            [JsonProperty("iso_639_1")]
+            public string iso_3166_1 { get; set; }
+
+            [JsonProperty("name")]
+            public string Name { get; set; }
+        }
+
 
         public partial class MovieItem
         {
@@ -95,8 +110,8 @@ namespace TMDb_API_app.Models
         {
             public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
             {
-                //MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                //DateParseHandling = DateParseHandling.None,
+                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
+                DateParseHandling = DateParseHandling.None,
             };
         }
     }

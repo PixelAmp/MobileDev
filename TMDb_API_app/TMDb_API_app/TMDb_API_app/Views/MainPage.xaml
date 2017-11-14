@@ -13,10 +13,6 @@
         BackgroundColor= "#89CFF0"
         >
 
-        <Button
-            Text="Navigation Example"
-            Command="{Binding NavToNewPageCommand}" />
-
         <StackLayout
             Orientation="Horizontal"
             HorizontalOptions="CenterAndExpand">
@@ -31,12 +27,12 @@
 
 
         <ListView
-            x:Name="WeatherListView"
+            x:Name="MovieListView"
             ItemsSource="{Binding MovieCollection}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell
-                        x:Name="WeatherItemCell">
+                        x:Name="MovieItemCell">
                         <ViewCell.ContextActions>
                             <MenuItem
                                 x:Name="MoreInfoButton"
@@ -44,27 +40,47 @@
                                 BindingContext="{Binding Source={x:Reference MovieListView}, Path=BindingContext}"
                                 Command="{Binding NavToMoreInfoPageCommand}"
                                 CommandParameter="{Binding Source={x:Reference MovieItemCell}, Path=BindingContext}"
-                                Text="More" />
+                                Text="More"/>
+
+                            <MenuItem
+                                Text="Delete"
+                                IsDestructive="True"
+                                
+                                BindingContext="{Binding Source={x:Reference MovieListView}, Path=BindingContext}"
+                                Command="{Binding DeleteCellCommand}"
+                                CommandParameter="{Binding Source={x:Reference MovieItemCell}, Path=BindingContext}"
+                                />
+
                         </ViewCell.ContextActions>
                         
                         <ViewCell.View>
                             <StackLayout
-                                Orientation="Horizontal">
+                                Orientation="Horizontal"
+                                >
                                 <Label
-                                    x:Name="LocationNameLabel"
+                                    x:Name="MovieName"
                                     Text="{Binding Title}"
                                     VerticalOptions="Center"
-                                    Margin="10" />
+                                    Margin="0" 
+                                    TextColor="Black"
+                                    WidthRequest="100"
+                                    />
+                                
                                 <Label
-                                    x:Name="TemperatureLabel"
-                                    Text="{Binding Vote_Average, StringFormat='Vote Average: {0}'}"
+                                    x:Name="RatingLabel"
+                                    Text="{Binding VoteAverage, StringFormat='Rating: {0}/10'}"
                                     VerticalOptions="Center"
-                                    Margin="3" />
+                                    Margin="3" 
+                                    WidthRequest="100"
+                                    />
+                                
                                 <Label
-                                    x:Name="CloudLabel"
-                                    Text="{Binding tagline, StringFormat='Tagline: {0}'}"
+                                    x:Name="TaglineLabel"
+                                    Text="{Binding Tagline, StringFormat='{0}'}"
                                     VerticalOptions="Center"
-                                    Margin="3" />
+                                    Margin="3" 
+                                    WidthRequest="200"
+                                    />
                             </StackLayout>
                         </ViewCell.View>
                     </ViewCell>
