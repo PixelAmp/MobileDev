@@ -9,7 +9,6 @@
     <StackLayout
         Padding="0,20,0,0"
         HorizontalOptions="Center"
-        VerticalOptions="Start"
         BackgroundColor= "#89CFF0"
         >
 

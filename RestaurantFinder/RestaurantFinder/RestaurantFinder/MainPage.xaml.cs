@@ -63,7 +63,7 @@ namespace RestaurantFinder
                     break;
             }
 
-            Navigation.PushAsync(new MapPage(LData));
+            Navigation.PushAsync(new MapPage());
         }
     }
 }
